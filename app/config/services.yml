@@ -7,3 +7,8 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    app.convert_engine:
+        class: AppBundle\Service\ConvertorService
+        calls:
+            - [setOpenTbs, ["@opentbs"]]
